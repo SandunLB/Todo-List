@@ -23,7 +23,7 @@ $tasks = $stmt->fetchAll();
     <script src='https://fullcalendar.io/releases/daygrid/4.3.0/main.min.js'></script>
 </head>
 <body>
-    <?php include 'includes/header.php'; ?>
+   
     <div class="container">
         <h1>Your Tasks</h1>
         <ul class="task-list">
@@ -37,7 +37,7 @@ $tasks = $stmt->fetchAll();
         <a href="add_task.php" class="button">Add Task</a>
         <div id='calendar'></div>
     </div>
-    <?php include 'includes/footer.php'; ?>
+  
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
