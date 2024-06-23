@@ -21,16 +21,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <?php include 'includes/header.php'; ?>
-    <form method="post" action="login.php">
-        <input type="text" name="username" required>
-        <input type="password" name="password" required>
-        <button type="submit">Login</button>
-    </form>
-    <?php include 'includes/footer.php'; ?>
+    <div class="container">
+        <h1>Login</h1>
+        <form method="post" action="login.php">
+            <input type="text" name="username" required placeholder="Username">
+            <input type="password" name="password" required placeholder="Password">
+            <button type="submit">Login</button>
+        </form>
+    </div>
 </body>
 </html>

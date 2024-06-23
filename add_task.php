@@ -21,16 +21,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Add Task</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <?php include 'includes/header.php'; ?>
-    <form method="post" action="add_task.php">
-        <input type="text" name="task" required>
-        <input type="date" name="due_date" required>
-        <button type="submit">Add Task</button>
-    </form>
-    <?php include 'includes/footer.php'; ?>
+    <div class="container">
+        <h1>Add Task</h1>
+        <form method="post" action="add_task.php">
+            <input type="text" name="task" required placeholder="Task">
+            <input type="date" name="due_date" required>
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
 </body>
 </html>

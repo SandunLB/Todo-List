@@ -16,23 +16,28 @@ $tasks = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>To-Do List with Calendar</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href='https://fullcalendar.io/releases/core/4.3.1/main.min.css' rel='stylesheet' />
     <link href='https://fullcalendar.io/releases/daygrid/4.3.0/main.min.css' rel='stylesheet' />
     <script src='https://fullcalendar.io/releases/core/4.3.1/main.min.js'></script>
     <script src='https://fullcalendar.io/releases/daygrid/4.3.0/main.min.js'></script>
 </head>
 <body>
+    <?php include 'includes/header.php'; ?>
     <div class="container">
         <h1>Your Tasks</h1>
         <ul class="task-list">
             <?php foreach ($tasks as $task): ?>
-                <li><?php echo htmlspecialchars($task['task']); ?> (Due: <?php echo htmlspecialchars($task['due_date']); ?>)</li>
+                <li><?php echo htmlspecialchars($task['task']); ?> (Due: <?php echo htmlspecialchars($task['due_date']); ?>)
+                    <a href="edit_task.php?id=<?php echo $task['id']; ?>">Edit</a>
+                    <a href="delete_task.php?id=<?php echo $task['id']; ?>">Delete</a>
+                </li>
             <?php endforeach; ?>
         </ul>
         <a href="add_task.php" class="button">Add Task</a>
         <div id='calendar'></div>
     </div>
+    <?php include 'includes/footer.php'; ?>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
